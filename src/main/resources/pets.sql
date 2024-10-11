@@ -36,3 +36,25 @@ create table if not exists dog
     foreign key (id) references pet (id)
     on delete cascade
     );
+
+create table if not exists tortoise
+(
+    id      BIGINT(19)   not null
+    primary key,
+    species   VARCHAR(255) null,
+    old TINYINT(3)   null,
+    constraint tortoise_ibfk_1
+    foreign key (id) references pet (id)
+    on delete cascade
+    );
+
+create table if not exists capybara
+(
+    id      BIGINT(19)   not null
+    primary key,
+    color   VARCHAR(255) null,
+    tail TINYINT(3)   null,
+    constraint capybara_ibfk_1
+    foreign key (id) references pet (id)
+    on delete cascade
+);

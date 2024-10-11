@@ -9,7 +9,11 @@ import java.util.List;
 @Service
 public class TortoiseService {
     @Autowired
-    private TortoiseRepository tortoiseRepository;
+    private final TortoiseRepository tortoiseRepository;
+
+    public TortoiseService(TortoiseRepository tortoiseRepository) {
+        this.tortoiseRepository = tortoiseRepository;
+    }
 
     public List<Tortoise> findAllTortoises() {
         return tortoiseRepository.findAll();
@@ -19,5 +23,9 @@ public class TortoiseService {
         return tortoiseRepository.save(tortoise);
     }
 
-    public void deleteTortoise(Long id) {tortoiseRepository.deleteById(id); }
+    public void deleteTortoise(Long id) {
+        if (tortoiseRepository.existsById(id)) {
+            tortoiseRepository.deleteById(id);
+        }
+    }
 }

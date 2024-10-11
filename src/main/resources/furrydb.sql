@@ -75,6 +75,50 @@ INSERT INTO `dog` VALUES (1,'Golden Retriever',1),(2,'Labrador Retriever',0),(3,
 /*!40000 ALTER TABLE `dog` ENABLE KEYS */;
 UNLOCK TABLES;
 
+DROP TABLE IF EXISTS `tortoise`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `tortoise` (
+                       `id` bigint NOT NULL,
+                       `species` varchar(255) DEFAULT NULL,
+                       `old` tinyint(1) DEFAULT NULL,
+                       PRIMARY KEY (`id`),
+                       CONSTRAINT `tortoise_ibfk_1` FOREIGN KEY (`id`) REFERENCES `pet` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cat`
+--
+
+LOCK TABLES `tortoise` WRITE;
+/*!40000 ALTER TABLE `tortoise` DISABLE KEYS */;
+INSERT INTO `tortoise` VALUES (6,'Leopard Tortoise',1),(7,'Russian Tortoise',0),(8,'Orange',1),(9,'Indian Star Tortoise',0),(10,'Marginated Tortoise',1);
+/*!40000 ALTER TABLE `tortoise` ENABLE KEYS */;
+UNLOCK TABLES;
+
+DROP TABLE IF EXISTS `capybara`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `capybara` (
+                       `id` bigint NOT NULL,
+                       `color` varchar(255) DEFAULT NULL,
+                       `tail` tinyint(1) DEFAULT NULL,
+                       PRIMARY KEY (`id`),
+                       CONSTRAINT `capybara_ibfk_1` FOREIGN KEY (`id`) REFERENCES `pet` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `capybara`
+--
+
+LOCK TABLES `capybara` WRITE;
+/*!40000 ALTER TABLE `capybara` DISABLE KEYS */;
+INSERT INTO `capybara` VALUES (6,'Black',1),(7,'Brown',0),(8,'Orange',1),(9,'Cream',0),(10,'Red',1);
+/*!40000 ALTER TABLE `capybara` ENABLE KEYS */;
+UNLOCK TABLES;
+
 --
 -- Table structure for table `pet`
 --
