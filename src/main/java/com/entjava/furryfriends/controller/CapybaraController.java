@@ -2,9 +2,12 @@ package com.entjava.furryfriends.controller;
 
 import com.entjava.furryfriends.model.Capybara;
 import com.entjava.furryfriends.service.CapybaraService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/capybaras")
@@ -17,8 +20,15 @@ public class CapybaraController {
     }
 
     @GetMapping
-    public List<Capybara> getAllCapybaras() {
-        return capybaraService.findAllCapybaras();
+    public Map<String, Object> getAllCapybaras(Authentication authentication)
+    {
+        List<Capybara> capybaras = capybaraService.findAllCapybaras();
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("user", authentication.getName());
+        response.put("capybaras", capybaras);
+
+        return response;
     }
 
     @PostMapping
