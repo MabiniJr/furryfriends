@@ -1,10 +1,14 @@
 package com.entjava.furryfriends.controller;
 
+
 import com.entjava.furryfriends.model.Tortoise;
 import com.entjava.furryfriends.service.TortoiseService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/tortoises")
@@ -17,8 +21,15 @@ public class TortoiseController {
     }
 
     @GetMapping
-    public List<Tortoise> getAllTortoises() {
-        return tortoiseService.findAllTortoises();
+    public Map<String, Object> getAllTortoises(Authentication authentication)
+    {
+        List<Tortoise> tortoises = tortoiseService.findAllTortoises();
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("user", authentication.getName());
+        response.put("tortoises", tortoises);
+
+        return response;
     }
 
     @PostMapping

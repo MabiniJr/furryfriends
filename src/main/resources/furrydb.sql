@@ -19,9 +19,8 @@
 -- Current Database: `furry_friends_db`
 --
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `furry_friends_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-
-USE `furry_friends_db`;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `cfunds_furryfriends_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `cfunds_furryfriends_db`;
 
 --
 -- Table structure for table `cat`
@@ -93,7 +92,7 @@ CREATE TABLE `tortoise` (
 
 LOCK TABLES `tortoise` WRITE;
 /*!40000 ALTER TABLE `tortoise` DISABLE KEYS */;
-INSERT INTO `tortoise` VALUES (6,'Leopard Tortoise',1),(7,'Russian Tortoise',0),(8,'Orange',1),(9,'Indian Star Tortoise',0),(10,'Marginated Tortoise',1);
+INSERT INTO `tortoise` VALUES (11,'Leopard Tortoise',1),(12,'Russian Tortoise',0),(13,'Orange',1),(14,'Indian Star Tortoise',0),(15,'Marginated Tortoise',1);
 /*!40000 ALTER TABLE `tortoise` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -115,7 +114,7 @@ CREATE TABLE `capybara` (
 
 LOCK TABLES `capybara` WRITE;
 /*!40000 ALTER TABLE `capybara` DISABLE KEYS */;
-INSERT INTO `capybara` VALUES (6,'Black',1),(7,'Brown',0),(8,'Orange',1),(9,'Cream',0),(10,'Red',1);
+INSERT INTO `capybara` VALUES (16,'Black',1),(17,'Brown',0),(18,'Orange',1),(19,'Cream',0),(20,'Red',1);
 /*!40000 ALTER TABLE `capybara` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -141,7 +140,7 @@ CREATE TABLE `pet` (
 
 LOCK TABLES `pet` WRITE;
 /*!40000 ALTER TABLE `pet` DISABLE KEYS */;
-INSERT INTO `pet` VALUES (1,'Max',3,'DOG'),(2,'Bella',2,'DOG'),(3,'Charlie',5,'DOG'),(4,'Lucy',1,'DOG'),(5,'Cooper',4,'DOG'),(6,'Luna',2,'CAT'),(7,'Milo',3,'CAT'),(8,'Oliver',4,'CAT'),(9,'Simba',6,'CAT'),(10,'Chloe',1,'CAT');
+INSERT INTO `pet` VALUES (1,'Max',3,'DOG'),(2,'Bella',2,'DOG'),(3,'Charlie',5,'DOG'),(4,'Lucy',1,'DOG'),(5,'Cooper',4,'DOG'),(6,'Luna',2,'CAT'),(7,'Milo',3,'CAT'),(8,'Oliver',4,'CAT'),(9,'Simba',6,'CAT'),(10,'Chloe',1,'CAT'),(11,'Leopard Tortoise',1,'TORTOISE'),(12,'Russian Tortoise',0,'TORTOISE'),(13,'Orange',1,'TORTOISE'),(14,'Indian Star Tortoise',0,'TORTOISE'),(15,'Marginated Tortoise',1,'TORTOISE'),(16,'Black',1,'CAPYBARA'),(17,'Brown',0,'CAPYBARA'),(18,'Orange',1,'CAPYBARA'),(19,'Cream',0,'CAPYBARA'),(20,'Red',1,'CAPYBARA');
 /*!40000 ALTER TABLE `pet` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
